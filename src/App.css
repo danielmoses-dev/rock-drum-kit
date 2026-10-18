@@ -1,0 +1,336 @@
+/* ==========================================================================
+   DRUM•CORPS Responsive Mobile & Tablet Design System
+   Ensures desktop version is 100% untouched while mobile displays flawlessly.
+   ========================================================================== */
+
+/* Touch-action optimizations */
+button,
+[role="button"],
+.interactive-zone {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Base Responsive Variables & Breakpoints */
+:root {
+  --nav-rail-display: flex;
+  --hero-padding: 36px 48px 24px;
+  --section-padding: 90px 48px;
+}
+
+/* ==========================================================================
+   TABLET RESPONSIVENESS (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  :root {
+    --hero-padding: 28px 32px 20px;
+    --section-padding: 70px 32px;
+  }
+
+  .nav-links-desktop {
+    gap: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  :root {
+    --nav-rail-display: none;
+    --hero-padding: 20px 18px 16px;
+    --section-padding: 56px 18px;
+  }
+
+  /* 1. Hide floating right rail on mobile to avoid screen clutter & touch blocking */
+  .scroll-nav-rail {
+    display: none !important;
+  }
+
+  /* 2. Hero Section Header */
+  .hero-header {
+    flex-wrap: wrap !important;
+    gap: 14px !important;
+  }
+
+  .hero-nav-desktop {
+    display: none !important;
+  }
+
+  .hero-nav-mobile-toggle {
+    display: flex !important;
+  }
+
+  /* 3. Hero Editorial Sub-headers */
+  .hero-subheaders-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+    text-align: center !important;
+  }
+
+  .hero-subheaders-grid p {
+    justify-self: center !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 4. Hero Monumental DRUM Stage */
+  .hero-stage-container {
+    height: 400px !important;
+    margin: 6px 0 !important;
+  }
+
+  .hero-drum-title {
+    font-size: clamp(100px, 28vw, 170px) !important;
+  }
+
+  .hero-drumkit-wrapper {
+    width: min(360px, 94vw) !important;
+  }
+
+  /* 5. Hero Lower Pill Overlay */
+  .hero-lower-pill {
+    flex-direction: column !important;
+    padding: 20px 18px !important;
+    border-radius: 20px !important;
+    gap: 18px !important;
+    align-items: stretch !important;
+  }
+
+  .hero-pill-left {
+    justify-content: space-between !important;
+    width: 100% !important;
+  }
+
+  .hero-pill-description {
+    display: none !important; /* Hide long descriptor on mobile for compact thumb dock */
+  }
+
+  .hero-trigger-dock {
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  .hero-key-pills-row {
+    justify-content: center !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .hero-key-pill-btn {
+    padding: 7px 4px !important;
+    font-size: 10px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .hero-key-pill-btn kbd {
+    display: none !important; /* Hide keyboard key tags on touch devices */
+  }
+
+  /* 6. Section Transition Bridges */
+  .section-transition-container {
+    height: 75px !important;
+  }
+
+  .section-transition-badge {
+    padding: 4px 12px !important;
+    font-size: 9px !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  /* 7. Anatomy Section */
+  .anatomy-section-container {
+    padding: 56px 18px !important;
+  }
+
+  .anatomy-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .anatomy-component-selector {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .anatomy-selector-btn {
+    padding: 10px 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .anatomy-selector-btn kbd,
+  .anatomy-selector-btn span:last-child {
+    display: none !important;
+  }
+
+  .anatomy-spec-card {
+    padding: 20px 16px !important;
+    border-radius: 18px !important;
+    gap: 20px !important;
+  }
+
+  .anatomy-top-info {
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+
+  .anatomy-specs-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .anatomy-strike-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 6px !important;
+  }
+
+  /* 8. Masterclass Cinema Section */
+  .masterclass-section-container {
+    padding: 56px 18px !important;
+  }
+
+  .masterclass-main-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  .masterclass-video-controls {
+    padding: 12px 14px !important;
+  }
+
+  .masterclass-chapters-column {
+    gap: 8px !important;
+  }
+
+  .masterclass-chapter-card {
+    padding: 12px 14px !important;
+  }
+
+  /* 9. Beat Machine Section */
+  .beat-machine-section-container {
+    padding: 56px 18px !important;
+  }
+
+  .beat-machine-transport-bar {
+    padding: 16px !important;
+    border-radius: 16px !important;
+    gap: 14px !important;
+  }
+
+  .beat-machine-transport-controls {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .beat-machine-sliders {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+  }
+
+  .beat-machine-actions {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  .beat-machine-panels-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .beat-machine-drum-pads {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .beat-machine-synth-pads {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .beat-machine-pad-btn {
+    min-height: 64px !important;
+    padding: 10px !important;
+  }
+
+  /* 16-Step Sequencer Touch Scroll */
+  .sequencer-scroll-container {
+    width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 8px !important;
+  }
+
+  .sequencer-table {
+    min-width: 620px !important;
+  }
+
+  .sequencer-track-label {
+    position: sticky !important;
+    left: 0 !important;
+    z-index: 10 !important;
+    background-color: #161922 !important;
+  }
+
+  .sequencer-step-btn {
+    min-width: 28px !important;
+    height: 36px !important;
+  }
+
+  /* 10. Footer */
+  .footer-container {
+    padding: 40px 18px 24px !important;
+  }
+
+  .footer-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+
+  .footer-modal-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE PHONES (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .hero-drumkit-wrapper {
+    width: min(320px, 92vw) !important;
+  }
+
+  .hero-key-pills-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .anatomy-component-selector {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .beat-machine-drum-pads {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .beat-machine-synth-pads {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .beat-machine-sliders {
+    grid-template-columns: 1fr !important;
+  }
+}
